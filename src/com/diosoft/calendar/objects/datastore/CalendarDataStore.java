@@ -8,8 +8,8 @@ import com.diosoft.calendar.objects.Event;
 public interface CalendarDataStore {
 
     void storeEvent(Event event);
-    Event getEvent();
-    Event deleteEvent(String eventName);
+    Event getEvent(String eventName);
+    Event deleteEvent(Event event);
 
 
 
