@@ -1,20 +1,21 @@
-package com.diosoft.calendar.objects;
+package com.diosoft.calendar.objects.service;
 
 /**
  * Created by dysen on 1/13/15.
  */
+        import com.diosoft.calendar.objects.common.Event;
+        import com.diosoft.calendar.objects.common.Person;
         import com.diosoft.calendar.objects.datastore.CalendarDataStore;
 
-        import java.util.HashMap;
         import java.util.List;
 
 /**
  * Created by dysen on 1/12/15.
  */
-public class CalendarService {
+public class CalendarServiceImp {
     private final CalendarDataStore storage;
 
-    public CalendarService(CalendarDataStore _storage) {
+    public CalendarServiceImp(CalendarDataStore _storage) {
         this.storage = _storage;
     }
 

@@ -1,6 +1,6 @@
 package com.diosoft.calendar.objects.datastore;
 
-import com.diosoft.calendar.objects.Event;
+import com.diosoft.calendar.objects.common.Event;
 
 /**
  * Created by dysen on 1/13/15.
