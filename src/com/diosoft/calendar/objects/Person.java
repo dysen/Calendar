@@ -1,10 +1,12 @@
 package com.diosoft.calendar.objects;
 
+import java.io.Serializable;
+
 /**
  * Created by dysen on 1/13/15.
  */
 
-public class Person implements Comparable<Person> {
+public class Person implements Comparable<Person> , Serializable{
     private final String firstName;
     private final String secondName;
     private final String email;
