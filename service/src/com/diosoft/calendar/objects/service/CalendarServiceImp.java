@@ -24,7 +24,7 @@ public class CalendarServiceImp {
 
     public void addEvent(Event _event) throws RemoteException {
 
-        storage.addEvent(_event);
+        storage.publish(_event, null);
 
     }
 
@@ -32,8 +32,8 @@ public class CalendarServiceImp {
         return storage.getEvent(_eventTitle);
     }
 
-    public void deleteEvent(Event _event) {
-        storage.deleteEvent(_event);
+    public void deleteEvent(String _eventName) {
+        storage.remove(_eventName);
     }
 
     public void createEvent(String name, String description, GregorianCalendar startDate, GregorianCalendar endDate, List<Person> attenders) {
