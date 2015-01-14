@@ -20,7 +20,7 @@ public class Event implements Serializable {
     private final String description;
     private final String email;
     private final UUID id;
-    private final List<String> attenders;
+    private final List<Person> attenders;
     private final Date startDate;
     private final Date endDate;
 
@@ -40,7 +40,7 @@ public class Event implements Serializable {
         return id;
     }
 
-    public List<String> getAttenders() {
+    public List<Person> getAttenders() {
         return attenders;
     }
 
@@ -111,37 +111,37 @@ public class Event implements Serializable {
         private String description;
         private String email;
         private UUID id;
-        private List<String> attenders;
+        private List<Person> attenders;
         private Date startDate;
         private Date endDate;
-
-        public String getTitle() {
-            return title;
-        }
-
-        public String getDescription() {
-            return description;
-        }
-
-        public String getEmail() {
-            return email;
-        }
-
-        public UUID getId() {
-            return id;
-        }
-
-        public List<String> getAttenders() {
-            return attenders;
-        }
-
-        public Date getStartDate() {
-            return startDate;
-        }
-
-        public Date getEndDate() {
-            return endDate;
-        }
+//
+//        public String getTitle() {
+//            return title;
+//        }
+//
+//        public String getDescription() {
+//            return description;
+//        }
+//
+//        public String getEmail() {
+//            return email;
+//        }
+//
+//        public UUID getId() {
+//            return id;
+//        }
+//
+//        public List<Person> getAttenders() {
+//            return attenders;
+//        }
+//
+//        public Date getStartDate() {
+//            return startDate;
+//        }
+//
+//        public Date getEndDate() {
+//            return endDate;
+//        }
 
         public Builder title(String _title) {
             this.title = _title;
@@ -163,7 +163,7 @@ public class Event implements Serializable {
             return this;
         }
 
-        public Builder attenders(List<String> _attenders) {
+        public Builder attenders(List<Person> _attenders) {
             this.attenders = _attenders;
             return this;
         }

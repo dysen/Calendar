@@ -3,10 +3,8 @@ package com.diosoft.calendar.objects.datastore;
 import com.diosoft.calendar.objects.common.Event;
 import com.diosoft.calendar.objects.common.Person;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.rmi.RemoteException;
+import java.util.*;
 
 /**
  * Created by dysen on 1/13/15.
@@ -16,24 +14,48 @@ public class CalendarDataStoreImpl implements CalendarDataStore {
     //<main db <ID, Event>
     private final Map<UUID, Event> mainDataStore = new HashMap<UUID, Event>();
     //<person(attender) - ID>
-    private final Map<Person, List<UUID>> attenderStore= new HashMap<Person, List<UUID>>();
+    private final Map<Person, HashSet<UUID>> attenderStore= new HashMap<Person, HashSet<UUID>>();
     //<title(Event) - ID>
     private final Map<String, UUID> eventStore = new HashMap<String, UUID>();
 
     @Override
-    public void storeEvent(Event event) {
+    public void publish(Event event, UUID id) {
+        mainDataStore.put(id, event);
+        eventStore.put(event.getTitle(), id);
 
+        List<Person> attenders= event.getAttenders();
+        for (Person person: attenders) {
+            HashSet<UUID> uuidsPerson =  attenderStore.get(person);
+            //Проверка на null uuidsPerson?
+            uuidsPerson.add(id);
+        }
     }
 
+    @Override
+    public Event remove(String eventName) {
+        UUID id = eventStore.get(eventName);
+        Event event = mainDataStore.get(id);
+        List<Person> attenders = event.getAttenders();
+
+        for (Person person: attenders) {
+            HashSet<UUID> uuidsPerson =  attenderStore.get(person);
+            //Проверка на null uuidsPerson?
+            uuidsPerson.remove(id);
+            attenderStore.put(person, uuidsPerson);
+        }
+
+        eventStore.remove(eventName);
+        mainDataStore.remove(id);
+
+        return event;
+    }
 
     @Override
     public Event getEvent(String eventName) {
-        return null;
-    }
+        UUID id = eventStore.get(eventName);
+        Event event = mainDataStore.get(id);
 
-    @Override
-    public Event deleteEvent(Event event) {
-        return null;
+        return event;
     }
 
 }

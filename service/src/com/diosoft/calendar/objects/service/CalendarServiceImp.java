@@ -7,6 +7,8 @@ package com.diosoft.calendar.objects.service;
         import com.diosoft.calendar.objects.common.Person;
         import com.diosoft.calendar.objects.datastore.CalendarDataStore;
 
+        import java.rmi.RemoteException;
+        import java.util.GregorianCalendar;
         import java.util.List;
 
 /**
@@ -20,9 +22,10 @@ public class CalendarServiceImp {
     }
 
 
-    public void addEvent(Event _event) {
+    public void addEvent(Event _event) throws RemoteException {
 
-        storage.storeEvent(_event);
+        storage.addEvent(_event);
+
     }
 
     public Event getEvent(String _eventTitle) {
@@ -33,7 +36,7 @@ public class CalendarServiceImp {
         storage.deleteEvent(_event);
     }
 
-    public void createEvent(String _description, List<Person> _attenders) {
+    public void createEvent(String name, String description, GregorianCalendar startDate, GregorianCalendar endDate, List<Person> attenders) {
     }
 
     public void addAttenders(Event _event, Person... _attenders) {
