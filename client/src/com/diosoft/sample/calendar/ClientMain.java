@@ -12,8 +12,7 @@ public class ClientMain {
         ApplicationContext context = new ClassPathXmlApplicationContext("clientApplicationContext.xml");
         CalendarService service = (CalendarService) context.getBean("calendarService");
 
-        String[] reservedCalendarNames = {"New Year", "Meeting10", "code review"};
-
+      service.addEvent("test", null, null, null, null);
 
     }
 

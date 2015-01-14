@@ -6,9 +6,6 @@ import com.diosoft.calendar.objects.common.Person;
 import java.rmi.RemoteException;
 import java.util.*;
 
-/**
- * Created by dysen on 1/13/15.
- */
 public class CalendarDataStoreImpl implements CalendarDataStore {
 
     //<main db <ID, Event>
@@ -23,11 +20,13 @@ public class CalendarDataStoreImpl implements CalendarDataStore {
         mainDataStore.put(id, event);
         eventStore.put(event.getTitle(), id);
 
-        List<Person> attenders= event.getAttenders();
-        for (Person person: attenders) {
-            HashSet<UUID> uuidsPerson =  attenderStore.get(person);
-            //Проверка на null uuidsPerson?
-            uuidsPerson.add(id);
+        List<Person> attenders = event.getAttenders();
+        if (attenders != null) {
+            for (Person person : attenders) {
+                HashSet<UUID> uuidsPerson = attenderStore.get(person);
+                //Проверка на null uuidsPerson?
+                uuidsPerson.add(id);
+            }
         }
     }
 
