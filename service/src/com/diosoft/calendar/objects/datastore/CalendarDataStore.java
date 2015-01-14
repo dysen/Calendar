@@ -11,5 +11,7 @@ public interface CalendarDataStore {
     void publish(Event event, UUID id);
     Event remove(String eventName);
     Event getEvent(String eventName);
+    void updateEvent(Event event);
+
 
 }

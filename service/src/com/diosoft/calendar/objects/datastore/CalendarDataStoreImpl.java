@@ -58,4 +58,9 @@ public class CalendarDataStoreImpl implements CalendarDataStore {
         return event;
     }
 
+    @Override
+    public void updateEvent(Event event) {
+
+    }
+
 }

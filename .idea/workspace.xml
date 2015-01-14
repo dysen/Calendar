@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="802b442e-9c78-4fa8-97d0-26e673f6b602" name="Default" comment="">
+    <list default="true" id="802b442e-9c78-4fa8-97d0-26e673f6b602" name="Default" comment="Добавил методы для работы с CalendarDataStore">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/datastore/CalendarDataStore.java" afterPath="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/datastore/CalendarDataStore.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/datastore/CalendarDataStoreImpl.java" afterPath="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/datastore/CalendarDataStoreImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/service/CalendarService.java" afterPath="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/service/CalendarService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/service/CalendarServiceImp.java" afterPath="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/service/CalendarServiceImp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/com/diosoft/sample/calendar/ClientMain.java" afterPath="$PROJECT_DIR$/client/src/com/diosoft/sample/calendar/ClientMain.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/common/Event.java" afterPath="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/common/Event.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/applicationContext.xml.xml" afterPath="$PROJECT_DIR$/service/src/applicationContext.xml.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/client.iml" afterPath="$PROJECT_DIR$/client/client.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/clientApplicationContext.xml" afterPath="$PROJECT_DIR$/client/src/clientApplicationContext.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Calendar.iws" />
@@ -62,8 +55,8 @@
       <file leaf-file-name="CalendarDataStore.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/datastore/CalendarDataStore.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
+              <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;class#CalendarDataStore#0" expanded="false" />
@@ -97,8 +90,8 @@
       <file leaf-file-name="CalendarDataStoreImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/datastore/CalendarDataStoreImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36324787" vertical-offset="0" max-vertical-offset="936">
-              <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.43589744" vertical-offset="0" max-vertical-offset="936">
+              <caret line="61" column="27" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="27" />
               <folding>
                 <element signature="docComment;class#CalendarDataStoreImpl#0" expanded="false" />
                 <element signature="e#519#542#0" expanded="true" />
@@ -134,8 +127,8 @@
         <option value="$PROJECT_DIR$/client/src/com/diosoft/sample/calendar/ClientMain.java" />
         <option value="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/service/CalendarService.java" />
         <option value="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/service/CalendarServiceImp.java" />
-        <option value="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/datastore/CalendarDataStore.java" />
         <option value="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/common/Event.java" />
+        <option value="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/datastore/CalendarDataStore.java" />
         <option value="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/datastore/CalendarDataStoreImpl.java" />
       </list>
     </option>
@@ -651,7 +644,7 @@
       <workItem from="1421187700680" duration="1431000" />
       <workItem from="1421189554737" duration="46000" />
       <workItem from="1421226889670" duration="4608000" />
-      <workItem from="1421242158070" duration="5994000" />
+      <workItem from="1421242158070" duration="6352000" />
     </task>
     <task id="LOCAL-00001" summary="add dir">
       <created>1421188815956</created>
@@ -665,11 +658,17 @@
       <option name="project" value="LOCAL" />
       <updated>1421243121654</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Добавил методы для работы с CalendarDataStore">
+      <created>1421260609156</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1421260609156</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12079000" />
+    <option name="totallyTimeSpent" value="12437000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
@@ -722,7 +721,8 @@
     </option>
     <MESSAGE value="add dir" />
     <MESSAGE value="Add HashMaps in CalendarDataStoreImp" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add HashMaps in CalendarDataStoreImp" />
+    <MESSAGE value="Добавил методы для работы с CalendarDataStore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил методы для работы с CalendarDataStore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -842,17 +842,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/datastore/CalendarDataStore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#CalendarDataStore#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/common/Event.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.4519231" vertical-offset="0" max-vertical-offset="3043">
@@ -866,10 +855,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/datastore/CalendarDataStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
+          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#CalendarDataStore#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/datastore/CalendarDataStoreImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36324787" vertical-offset="0" max-vertical-offset="936">
-          <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.43589744" vertical-offset="0" max-vertical-offset="936">
+          <caret line="61" column="27" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="27" />
           <folding>
             <element signature="docComment;class#CalendarDataStoreImpl#0" expanded="false" />
             <element signature="e#519#542#0" expanded="true" />
