@@ -8,7 +8,7 @@ import java.util.UUID;
  */
 public interface CalendarDataStore {
 
-    void publish(Event event, UUID id);
+    void publish(Event event);
     Event remove(String eventName);
     Event getEvent(String eventName);
     void updateEvent(Event event);

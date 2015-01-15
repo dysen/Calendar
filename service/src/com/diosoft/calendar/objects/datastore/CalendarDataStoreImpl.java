@@ -16,16 +16,16 @@ public class CalendarDataStoreImpl implements CalendarDataStore {
     private final Map<String, UUID> eventStore = new HashMap<String, UUID>();
 
     @Override
-    public void publish(Event event, UUID id) {
-        mainDataStore.put(id, event);
-        eventStore.put(event.getTitle(), id);
+    public void publish(Event event) {
+        mainDataStore.put(event.getId(), event);
+        eventStore.put(event.getTitle(), event.getId());
 
         List<Person> attenders = event.getAttenders();
         if (attenders != null) {
             for (Person person : attenders) {
                 HashSet<UUID> uuidsPerson = attenderStore.get(person);
                 //Проверка на null uuidsPerson?
-                uuidsPerson.add(id);
+                uuidsPerson.add(event.getId());
             }
         }
     }

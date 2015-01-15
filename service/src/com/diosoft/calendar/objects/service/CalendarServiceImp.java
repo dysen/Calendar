@@ -35,7 +35,7 @@ public class CalendarServiceImp implements CalendarService {
                 .id(null)
                 .build();
 
-        storage.publish(event, null);
+        storage.publish(event);
         logger.info("Published even on service side " + name);
 
     }
