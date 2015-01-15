@@ -21,16 +21,16 @@ public class CalendarServiceImp implements CalendarService {
     }
 
     @Override
-    public void addEvent(String name, String description, Date startDate, Date endDate, List<Person> attenders) throws RemoteException {
+    public void addEvent(String name, String description, Date startDate, Date endDate, String email,  List<Person> attenders) throws RemoteException {
 
-//        UUID id = new UUID();
+       UUID id = UUID.randomUUID();
 
         Event event = new Event.Builder()
                 .title(name)
                 .startDate(startDate)
                 .endDate(endDate)
-                .description("")
-                .email("")
+                .description(description)
+                .email(email)
                 .attenders(attenders)
                 .id(null)
                 .build();
