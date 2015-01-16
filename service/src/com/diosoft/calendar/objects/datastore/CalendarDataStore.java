@@ -1,6 +1,11 @@
 package com.diosoft.calendar.objects.datastore;
 
 import com.diosoft.calendar.objects.common.Event;
+import com.diosoft.calendar.objects.common.Person;
+
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -12,6 +17,5 @@ public interface CalendarDataStore {
     Event remove(String eventName);
     Event getEvent(String eventName);
     void updateEvent(Event event);
-
-
+    public List<Event> getEventsByInterval(GregorianCalendar from, GregorianCalendar to);
 }

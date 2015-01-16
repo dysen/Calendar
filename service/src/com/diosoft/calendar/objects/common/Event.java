@@ -2,6 +2,7 @@ package com.diosoft.calendar.objects.common;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.UUID;
 
@@ -21,8 +22,8 @@ public class Event implements Serializable {
     private final String email;
     private final UUID id;
     private final List<Person> attenders;
-    private final Date startDate;
-    private final Date endDate;
+    private final GregorianCalendar startDate;
+    private final GregorianCalendar endDate;
 
     public String getTitle() {
         return title;
@@ -44,11 +45,11 @@ public class Event implements Serializable {
         return attenders;
     }
 
-    public Date getStartDate() {
+    public GregorianCalendar getStartDate() {
         return startDate;
     }
 
-    public Date getEndDate() {
+    public GregorianCalendar getEndDate() {
         return endDate;
     }
 
@@ -112,8 +113,8 @@ public class Event implements Serializable {
         private String email;
         private UUID id;
         private List<Person> attenders;
-        private Date startDate;
-        private Date endDate;
+        private GregorianCalendar startDate;
+        private GregorianCalendar endDate;
 //
 //        public String getTitle() {
 //            return title;
@@ -168,12 +169,12 @@ public class Event implements Serializable {
             return this;
         }
 
-        public Builder startDate(Date _startDate) {
+        public Builder startDate(GregorianCalendar _startDate) {
             this.startDate = _startDate;
             return this;
         }
 
-        public Builder endDate(Date _endDate) {
+        public Builder endDate(GregorianCalendar _endDate) {
             this.startDate = _endDate;
             return this;
         }
@@ -181,8 +182,5 @@ public class Event implements Serializable {
         public Event build() {
             return new Event(this);
         }
-
-
     }
-
 }

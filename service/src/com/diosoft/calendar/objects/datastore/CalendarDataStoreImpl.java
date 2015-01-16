@@ -62,4 +62,18 @@ public class CalendarDataStoreImpl implements CalendarDataStore {
 
     }
 
+    @Override
+    public List<Event> getEventsByInterval(GregorianCalendar from, GregorianCalendar to) {
+        List<Event> monthEvents = new ArrayList<Event>();
+
+        for (Event event : mainDataStore.values()) {
+            from.getTime().after(event.getStartDate().getTime());
+
+            if (from.getTime().before(event.getStartDate().getTime()) && to.getTime().after(event.getEndDate().getTime())) {
+                monthEvents.add(event);
+            }
+        }
+
+        return monthEvents;
+    }
 }

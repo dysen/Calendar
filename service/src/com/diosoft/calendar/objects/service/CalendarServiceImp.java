@@ -5,7 +5,6 @@ import com.diosoft.calendar.objects.common.Person;
 import com.diosoft.calendar.objects.datastore.CalendarDataStore;
 
 import java.rmi.RemoteException;
-import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.UUID;
@@ -21,9 +20,9 @@ public class CalendarServiceImp implements CalendarService {
     }
 
     @Override
-    public void addEvent(String name, String description, Date startDate, Date endDate, String email,  List<Person> attenders) throws RemoteException {
+    public void addEvent(String name, String description, GregorianCalendar startDate, GregorianCalendar endDate, String email,  List<Person> attenders) throws RemoteException {
 
-       UUID id = UUID.randomUUID();
+        UUID id = UUID.randomUUID();
 
         Event event = new Event.Builder()
                 .title(name)
@@ -32,12 +31,11 @@ public class CalendarServiceImp implements CalendarService {
                 .description(description)
                 .email(email)
                 .attenders(attenders)
-                .id(null)
+                .id(id)
                 .build();
 
         storage.publish(event);
         logger.info("Published even on service side " + name);
-
     }
 
     @Override
@@ -56,4 +54,8 @@ public class CalendarServiceImp implements CalendarService {
         return storage.getEvent(_eventTitle);
     }
 
+    @Override
+    public List<Event> searchByInterval(GregorianCalendar searchDateFrom, GregorianCalendar searchDateTo) {
+        return storage.getEventsByInterval(searchDateFrom, searchDateTo);
+    }
 }
