@@ -4,10 +4,9 @@ import com.diosoft.calendar.objects.common.Event;
 import com.diosoft.calendar.objects.common.Person;
 import com.diosoft.calendar.objects.datastore.CalendarDataStore;
 
+import javax.xml.crypto.Data;
 import java.rmi.RemoteException;
-import java.util.GregorianCalendar;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 import java.util.logging.Logger;
 
 public class CalendarServiceImp implements CalendarService {
@@ -59,4 +58,22 @@ public class CalendarServiceImp implements CalendarService {
     public List<Event> searchByInterval(GregorianCalendar searchDateFrom, GregorianCalendar searchDateTo) {
         return storage.getEventsByInterval(searchDateFrom, searchDateTo);
     }
+
+    public boolean checkPersonAvailable(Person person, GregorianCalendar from, GregorianCalendar to) {
+        List<Event> personEvents = storage.getPersonsEvent(person);
+
+        for (Event event : personEvents) {
+            Date startDate = event.getStartDate().getTime();
+            Date endDate = event.getEndDate().getTime();
+            Date fromDate = from.getTime();
+            Date toDate = to.getTime();
+
+            if ((fromDate.after(startDate) && fromDate.before(endDate))
+            || (toDate.after(startDate) && toDate.before(endDate))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 }

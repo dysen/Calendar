@@ -145,12 +145,11 @@ public class Event implements Serializable {
 
         public Builder startDate(GregorianCalendar _startDate) {
             this.startDate = _startDate;
-            GregorianCalendar inputSearchDateTo = new GregorianCalendar(2008, Calendar.APRIL,Calendar.WEDNESDAY,10, 12);
             return this;
         }
 
         public Builder endDate(GregorianCalendar _endDate) {
-            this.startDate = _endDate;
+            this.endDate = _endDate;
             return this;
         }
 

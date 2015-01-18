@@ -18,4 +18,6 @@ public interface CalendarDataStore {
     Event getEvent(String eventName);
     void updateEvent(Event event);
     public List<Event> getEventsByInterval(GregorianCalendar from, GregorianCalendar to);
+    List<Event> getPersonsEvent(Person person);
+
 }

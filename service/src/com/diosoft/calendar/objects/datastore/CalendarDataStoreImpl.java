@@ -2,8 +2,6 @@ package com.diosoft.calendar.objects.datastore;
 
 import com.diosoft.calendar.objects.common.Event;
 import com.diosoft.calendar.objects.common.Person;
-
-import java.rmi.RemoteException;
 import java.util.*;
 
 public class CalendarDataStoreImpl implements CalendarDataStore {
@@ -52,9 +50,7 @@ public class CalendarDataStoreImpl implements CalendarDataStore {
     @Override
     public Event getEvent(String eventName) {
         UUID id = eventStore.get(eventName);
-        Event event = mainDataStore.get(id);
-
-        return event;
+        return mainDataStore.get(id);
     }
 
     @Override
@@ -76,4 +72,17 @@ public class CalendarDataStoreImpl implements CalendarDataStore {
 
         return monthEvents;
     }
+
+    @Override
+    public List<Event> getPersonsEvent(Person person) {
+        List<Event> personsEvent = new ArrayList<Event>();
+        HashSet<UUID> eventsId = attenderStore.get(person);
+
+        for (UUID id : eventsId) {
+            personsEvent.add(mainDataStore.get(id));
+        }
+
+        return personsEvent;
+    }
+
 }
