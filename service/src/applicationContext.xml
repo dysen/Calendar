@@ -18,4 +18,15 @@
               <property name="registryPort" value="1199"/>
        </bean>
 
+       <bean id="calendarDataStoreSQL" class="com.diosoft.calendar.objects.datastore.CalendarDataStoreSQL">
+              <property name="dataSource" ref="dataSource" />
+       </bean>
+
+       <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+              <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+              <property name="url" value="jdbc:mysql://hbt00.mysql.ukraine.com.ua/hbt00_testmysql" />
+              <property name="username" value="hbt00_testmysql" />
+              <property name="password" value="4ervyak" />
+       </bean>
+
 </beans>

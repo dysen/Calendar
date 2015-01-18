@@ -17,8 +17,8 @@ public interface CalendarService extends Remote {
 
     Event getEvent(String name) throws RemoteException;
 
-    public List<Event> searchByInterval(GregorianCalendar searchDateFrom, GregorianCalendar searchDateTo);
+    public List<Event> searchByInterval(GregorianCalendar searchDateFrom, GregorianCalendar searchDateTo) throws RemoteException;
 
-    boolean checkPersonAvailable(Person person, GregorianCalendar from, GregorianCalendar to);
+    boolean checkPersonAvailable(Person person, GregorianCalendar from, GregorianCalendar to) throws RemoteException;
 
 }
