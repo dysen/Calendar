@@ -13,7 +13,7 @@ import java.util.List;
  */
 public interface CalendarService extends Remote {
 
-    void addEvent(String name, String description, GregorianCalendar startDate, GregorianCalendar endDate, String email,  List<Person> attenders) throws RemoteException;
+    void addEvent(String name, String description, boolean allDay, GregorianCalendar startDate, GregorianCalendar endDate, String email,  List<Person> attenders) throws RemoteException;
 
     Event removeEvent(String name) throws RemoteException;
 

@@ -1,10 +1,7 @@
 package com.diosoft.calendar.objects.common;
 
 import java.io.Serializable;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * Created by dysen on 1/12/15.
@@ -24,6 +21,7 @@ public class Event implements Serializable {
     private final List<Person> attenders;
     private final GregorianCalendar startDate;
     private final GregorianCalendar endDate;
+    private final boolean allDay;
 
     public String getTitle() {
         return title;
@@ -54,12 +52,27 @@ public class Event implements Serializable {
     }
 
     @Override
+    public String toString() {
+        return "Event{" +
+                "title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", email='" + email + '\'' +
+                ", id=" + id +
+                ", attenders=" + attenders +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                ", allDay=" + allDay +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
         Event event = (Event) o;
 
+        if (allDay != event.allDay) return false;
         if (attenders != null ? !attenders.equals(event.attenders) : event.attenders != null) return false;
         if (description != null ? !description.equals(event.description) : event.description != null) return false;
         if (email != null ? !email.equals(event.email) : event.email != null) return false;
@@ -80,31 +93,19 @@ public class Event implements Serializable {
         result = 31 * result + (attenders != null ? attenders.hashCode() : 0);
         result = 31 * result + (startDate != null ? startDate.hashCode() : 0);
         result = 31 * result + (endDate != null ? endDate.hashCode() : 0);
+        result = 31 * result + (allDay ? 1 : 0);
         return result;
-    }
-
-    @Override
-    public String toString() {
-        return "Event{" +
-                "title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", email='" + email + '\'' +
-                ", id=" + id +
-                ", attenders=" + attenders +
-                ", startDate=" + startDate +
-                ", endDate=" + endDate +
-                '}';
     }
 
     public Event(Builder builder) {
         title = builder.title;
-
         description = builder.description;
         email = builder.email;
         id = builder.id;
         attenders = builder.attenders;
         startDate = builder.startDate;
         endDate = builder.endDate;
+        allDay = builder.allDay;
     }
 
     public static class Builder {
@@ -115,34 +116,7 @@ public class Event implements Serializable {
         private List<Person> attenders;
         private GregorianCalendar startDate;
         private GregorianCalendar endDate;
-//
-//        public String getTitle() {
-//            return title;
-//        }
-//
-//        public String getDescription() {
-//            return description;
-//        }
-//
-//        public String getEmail() {
-//            return email;
-//        }
-//
-//        public UUID getId() {
-//            return id;
-//        }
-//
-//        public List<Person> getAttenders() {
-//            return attenders;
-//        }
-//
-//        public Date getStartDate() {
-//            return startDate;
-//        }
-//
-//        public Date getEndDate() {
-//            return endDate;
-//        }
+        private boolean allDay;
 
         public Builder title(String _title) {
             this.title = _title;
@@ -171,6 +145,7 @@ public class Event implements Serializable {
 
         public Builder startDate(GregorianCalendar _startDate) {
             this.startDate = _startDate;
+            GregorianCalendar inputSearchDateTo = new GregorianCalendar(2008, Calendar.APRIL,Calendar.WEDNESDAY,10, 12);
             return this;
         }
 
@@ -179,8 +154,14 @@ public class Event implements Serializable {
             return this;
         }
 
+        public Builder allDay(boolean _allDay) {
+            this.allDay = _allDay;
+            return this;
+        }
+
         public Event build() {
             return new Event(this);
         }
     }
+
 }
