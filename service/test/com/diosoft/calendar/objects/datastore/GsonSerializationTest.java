@@ -3,6 +3,8 @@ package com.diosoft.calendar.objects.datastore;
 import com.diosoft.calendar.objects.Utils.JsonHelper;
 import com.diosoft.calendar.objects.common.Event;
 import com.diosoft.calendar.objects.common.Person;
+import junit.framework.TestCase;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -13,50 +15,10 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 
-public class GsonSerializationTest {
-    private Map<UUID, Event> mainDataStore;
-    private Map<Person, HashSet<UUID>> attenderStore;
-    private HashSet<UUID> ids;
-    private Map<String, UUID> eventStore;
-    private UUID id = UUID.randomUUID();
-    private Person person;
-    private Event event;
-
-    @Before
-    public void setUp() {
-
-        person = new Person.Builder().
-                firstName("Andrii").
-                secondName("Lemdianov").
-                email("dysen@ukr.net").
-                phone("555315465").
-                build();
-
-        event = new Event.Builder()
-                .title("Event Title")
-                .startDate(new GregorianCalendar(2008, Calendar.APRIL, Calendar.TUESDAY, 10, 0))
-                .endDate(new GregorianCalendar(2008, Calendar.APRIL, Calendar.TUESDAY, 12, 0))
-                .description("Event description (e.g. Andrii Birthday)")
-                .email("admin@ukr.net")
-                .attenders(Arrays.asList(person))
-                .id(id)
-                .build();
-        eventStore = new HashMap<String, UUID>();
-        eventStore.put(event.getDescription(), id);
-
-        mainDataStore = new HashMap<UUID, Event>();
-        mainDataStore.put(id, event);
-
-        attenderStore = new HashMap<Person, HashSet<UUID>>();
-        ids = new HashSet<UUID>();
-        ids.add(id);
-        attenderStore.put(person, ids);
-
-    }
-
+public class GsonSerializationTest extends BaseSerializationTest{
 
     @Test
-    public void testPesrsonToJsonConverter() throws IOException {
+    public void testPersonToJsonConverter() throws IOException {
 
         String personJsonActual;
         String personJsonExpected = "{\n" +
@@ -68,7 +30,7 @@ public class GsonSerializationTest {
         ;
 
         personJsonActual = JsonHelper.objectToJson(person);
-        assertTrue(personJsonExpected.equals(personJsonActual));
+        Assert.assertTrue(personJsonExpected.equals(personJsonActual));
 
     }
 
@@ -109,7 +71,7 @@ public class GsonSerializationTest {
 
         eventJsonActual = JsonHelper.objectToJson(event);
 
-        assertTrue(eventJsonExpected.equals(eventJsonActual));
+        Assert.assertTrue(eventJsonExpected.equals(eventJsonActual));
 
 
     }
@@ -153,7 +115,7 @@ public class GsonSerializationTest {
                 "}";
         mainDataStoreMapJsonActual = JsonHelper.objectToJson(mainDataStore);
 //        assertTrue(mainDataStoreMapJsonExpected.equals(mainDataStoreMapJsonActual));
-        assertEquals(mainDataStoreMapJsonExpected, mainDataStoreMapJsonActual);
+        Assert.assertEquals(mainDataStoreMapJsonExpected, mainDataStoreMapJsonActual);
 
     }
 
@@ -177,7 +139,10 @@ public class GsonSerializationTest {
                 "}";
 
         eventStoreMapJsonActual = JsonHelper.objectToJson(eventStore);
-        assertTrue(eventStoreMapJsonExpected.equals(eventStoreMapJsonActual));
+        Assert.assertTrue(eventStoreMapJsonExpected.equals(eventStoreMapJsonActual));
     }
+
+
+
 
 }

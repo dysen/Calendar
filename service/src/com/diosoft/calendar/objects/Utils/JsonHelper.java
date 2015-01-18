@@ -17,6 +17,12 @@ public class JsonHelper {
     private static final String MAIN_STORE_FILE = "mainDataStoreMap.json";
     private static final String EVENTS_STORE_FILE = "eventStoreMap.json";
     private static final String ATTENDERS_STORE_FILE = "attenderStoreMap.json";
+    public static final Type MAIN_STORE_TYPE = new TypeToken<Map<UUID, Event>>() {
+    }.getType();
+    public static final Type EVENT_STORE_TYPE = new TypeToken<Map<String, UUID>>() {
+    }.getType();
+    public static final Type ATTENDER_STORE_TYPE = new TypeToken<Map<Person, HashSet<UUID>>>() {
+    }.getType();
 
 
     public static void writeJson(String json, String fileName) throws IOException {
@@ -37,9 +43,12 @@ public class JsonHelper {
         return gson.toJson(object);
     }
 
-    public static Object jsonToObject(String fileName, Type type) throws FileNotFoundException {
+    public static Object fromFileToObject(String fileName, Type type) throws FileNotFoundException {
         Gson gson = new Gson();
         return gson.fromJson(readFromJson(fileName), type);
+    }
+    public static Object jsonToObject(String json, Type type){
+        return new Gson().fromJson(json, type);
     }
 
     public static Map<Person, HashSet<UUID>> getAttenders() throws FileNotFoundException {
@@ -51,12 +60,12 @@ public class JsonHelper {
     }
 
     private static Map<Person, HashSet<UUID>> jsonToAttenders(String fileNAme) throws FileNotFoundException {
-        return (Map<Person, HashSet<UUID>>) jsonToObject(fileNAme, new TypeToken<Map<Person, HashSet<UUID>>>() {
+        return (Map<Person, HashSet<UUID>>) fromFileToObject(fileNAme, new TypeToken<Map<Person, HashSet<UUID>>>() {
         }.getType());
     }
 
     private static Map<String, UUID> jsonToEvents(String fileName) throws FileNotFoundException {
-        return (Map<String, UUID>) jsonToObject(fileName, new TypeToken<Map<String, UUID>>() {
+        return (Map<String, UUID>) fromFileToObject(fileName, new TypeToken<Map<String, UUID>>() {
         }.getType());
     }
 
@@ -69,7 +78,7 @@ public class JsonHelper {
     }
 
     protected static Map<UUID, Event> jsonToMainStore(String fileName) throws FileNotFoundException {
-        return (Map<UUID, Event>) jsonToObject(fileName, new TypeToken<Map<UUID, Event>>() {
+        return (Map<UUID, Event>) fromFileToObject(fileName, new TypeToken<Map<UUID, Event>>() {
         }.getType());
     }
 
