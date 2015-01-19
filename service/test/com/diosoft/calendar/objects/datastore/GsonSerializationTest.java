@@ -122,13 +122,21 @@ public class GsonSerializationTest extends BaseSerializationTest{
     @Test
     public void testAttenderStoreToJsonConverter() throws IOException {
         String attenderStoreMapJsonActual;
-        String attenderStoreMapJsonExpected = "{\n" +
-                "  \"com.diosoft.calendar.objects.common.Person@71b02e11\": [\n" +
-                "    \"" + id + "\"\n" +
+        String attenderStoreMapJsonExpected = "[\n" +
+                "  [\n" +
+                "    {\n" +
+                "      \"firstName\": \"Andrii\",\n" +
+                "      \"secondName\": \"Lemdianov\",\n" +
+                "      \"email\": \"dysen@ukr.net\",\n" +
+                "      \"phone\": \"555315465\"\n" +
+                "    },\n" +
+                "    [\n" +
+                "      \"" + id +  "\"\n" +
+                "    ]\n" +
                 "  ]\n" +
-                "}";
-        attenderStoreMapJsonActual = JsonHelper.objectToJson(attenderStore);
-//        assertTrue(attenderStoreMapJsonExpected.equals(attenderStoreMapJsonActual));
+                "]";
+        attenderStoreMapJsonActual = JsonHelper.toJsonAttenders(attenderStore);
+        assertTrue(attenderStoreMapJsonExpected.equals(attenderStoreMapJsonActual));
     }
 
     @Test

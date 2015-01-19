@@ -4,6 +4,8 @@ import com.diosoft.calendar.objects.common.Event;
 import com.diosoft.calendar.objects.common.Person;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.*;
@@ -41,6 +43,32 @@ public class JsonHelper {
     public static String objectToJson(Object object) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         return gson.toJson(object);
+    }
+
+    public static String eventToJson(Object object){
+        Gson gson = new GsonBuilder().registerTypeAdapter(Person.class, new Event.PersonSerializer())
+                .create();
+        return gson.toJson((Event)object);
+
+    }
+
+    public static String toJsonAttenders(Map<Person, HashSet<UUID>> personHashSetMap){
+        GsonBuilder builder = new GsonBuilder();
+
+        Gson gson =
+                builder.enableComplexMapKeySerialization().setPrettyPrinting().create();
+        Type type = new TypeToken<Map<Person, HashSet<UUID>>>(){}.getType();
+        String json = gson.toJson(personHashSetMap, type);
+        return json;
+
+
+
+//        final Gson gson = new GsonBuilder().registerTypeAdapter(Person.class, new Event.PersonSerializer())
+//                .create();
+//        final JsonElement jsonTree = gson.toJsonTree(personHashSetMap, Map.class);
+//        final JsonObject jsonObject = new JsonObject();
+//        jsonObject.add("Person", jsonTree);
+//        return jsonObject.toString();
     }
 
     public static Object fromFileToObject(String fileName, Type type) throws FileNotFoundException {
@@ -99,7 +127,7 @@ public class JsonHelper {
     }
 
     public static void saveAttendersToFile(Map<Person, HashSet<UUID>> jsonObject) throws IOException {
-        writeJson(objectToJson(jsonObject), ATTENDERS_STORE_FILE);
+        writeJson(eventToJson(jsonObject), ATTENDERS_STORE_FILE);
     }
 
     public static void saveMainStorageToFile(Map<UUID, Event> jsonObject) throws IOException {

@@ -12,6 +12,21 @@ public class Person implements Comparable<Person> , Serializable{
     private final String email;
     private final String phone;
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getSecondName() {
+        return secondName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
 
     @Override
     public boolean equals(Object o) {

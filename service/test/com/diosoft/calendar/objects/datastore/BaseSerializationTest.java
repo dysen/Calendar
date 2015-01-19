@@ -66,7 +66,7 @@ public class BaseSerializationTest extends TestCase {
         eventToJson = JsonHelper.objectToJson(event);
         personToJson = JsonHelper.objectToJson(person);
         eventStoreToJson = JsonHelper.objectToJson(eventStore);
-        attenderStoreToJson = JsonHelper.objectToJson(attenderStore);
+        attenderStoreToJson = JsonHelper.toJsonAttenders(attenderStore);
         mainDataStoreToJson = JsonHelper.objectToJson(mainDataStore);
 
     }
