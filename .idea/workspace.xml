@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="802b442e-9c78-4fa8-97d0-26e673f6b602" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/datastore/CalendarDataStoreSQL.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_mysql_jdbc_com_springsource_com_mysql_jdbc_5_1_6.xml" />
+    <list default="true" id="802b442e-9c78-4fa8-97d0-26e673f6b602" name="Default" comment="Добавил поддержку MySQL jdbc в Spring">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/Utils/Interval.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/common/comparators/SortedEventByStartDate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/service/com/diosoft/calendar/objects/datastore/CalendarDataStoreImpl.class" afterPath="$PROJECT_DIR$/out/production/service/com/diosoft/calendar/objects/datastore/CalendarDataStoreImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/service/com/diosoft/calendar/objects/service/CalendarService.class" afterPath="$PROJECT_DIR$/out/production/service/com/diosoft/calendar/objects/service/CalendarService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/service/com/diosoft/calendar/objects/service/CalendarServiceImp.class" afterPath="$PROJECT_DIR$/out/production/service/com/diosoft/calendar/objects/service/CalendarServiceImp.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/service/CalendarService.java" afterPath="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/service/CalendarService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/Main.java" afterPath="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/applicationContext.xml" afterPath="$PROJECT_DIR$/service/src/applicationContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/service.iml" afterPath="$PROJECT_DIR$/service/service.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/service/CalendarServiceImp.java" afterPath="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/service/CalendarServiceImp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/test/com/diosoft/calendar/objects/service/CalendarServiceImpTest.java" afterPath="$PROJECT_DIR$/service/test/com/diosoft/calendar/objects/service/CalendarServiceImpTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Calendar.iws" />
@@ -34,64 +36,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/Main.java">
+      <file leaf-file-name="CalendarServiceImp.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/service/CalendarServiceImp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4455645" vertical-offset="0" max-vertical-offset="496">
-              <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CalendarDataStoreImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/datastore/CalendarDataStoreImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="98" max-vertical-offset="646">
-              <caret line="61" column="23" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.7020089" vertical-offset="0" max-vertical-offset="896">
+              <caret line="147" column="47" selection-start-line="147" selection-start-column="19" selection-end-line="147" selection-end-column="47" />
               <folding>
-                <element signature="method#publish#0;class#CalendarDataStoreImpl#0" expanded="false" />
-                <element signature="method#remove#0;class#CalendarDataStoreImpl#0" expanded="false" />
-                <element signature="method#getEvent#0;class#CalendarDataStoreImpl#0" expanded="false" />
-                <element signature="method#updateEvent#0;class#CalendarDataStoreImpl#0" expanded="false" />
-                <element signature="method#getEventsByInterval#0;class#CalendarDataStoreImpl#0" expanded="false" />
-                <element signature="method#getPersonsEvent#0;class#CalendarDataStoreImpl#0" expanded="false" />
+                <element signature="method#addEvent#0;class#CalendarServiceImp#0" expanded="false" />
+                <element signature="method#removeEvent#0;class#CalendarServiceImp#0" expanded="false" />
+                <element signature="method#getEvent#0;class#CalendarServiceImp#0" expanded="false" />
+                <element signature="method#checkPersonAvailable#0;class#CalendarServiceImp#0" expanded="false" />
+                <element signature="method#searchBestTimeForEvent#0;class#CalendarServiceImp#0" expanded="false" />
+                <element signature="method#checkPersonAvailableForEvent#0;class#CalendarServiceImp#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="applicationContext.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/src/applicationContext.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.64" vertical-offset="124" max-vertical-offset="629">
-              <caret line="20" column="37" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CalendarDataStoreSQL.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/datastore/CalendarDataStoreSQL.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="43" max-vertical-offset="901">
-              <caret line="16" column="25" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#325#326#0" expanded="true" />
-                <element signature="e#369#370#0" expanded="true" />
-                <marker date="1421616626854" expanded="true" signature="425:445" placeholder="SELECT * FRO..users..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CalendarDataStore.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/datastore/CalendarDataStore.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
-              <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -99,11 +56,9 @@
       <file leaf-file-name="CalendarService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/service/CalendarService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="27" max-vertical-offset="510">
-              <caret line="21" column="116" selection-start-line="21" selection-start-column="116" selection-end-line="21" selection-end-column="116" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+              <caret line="10" column="3" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="3" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -122,25 +77,32 @@
         <option value="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/datastore/CalendarDataStore.java" />
         <option value="$PROJECT_DIR$/service/test/com/diosoft/calendar/objects/datastore/CalendarDataStoreImplTest.java" />
         <option value="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/common/Event.java" />
-        <option value="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/service/CalendarServiceImp.java" />
         <option value="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/datastore/CalendarDataStoreImpl.java" />
-        <option value="$PROJECT_DIR$/service/test/com/diosoft/calendar/objects/service/CalendarServiceImpTest.java" />
         <option value="$PROJECT_DIR$/client/src/com/diosoft/sample/calendar/ClientMain.java" />
         <option value="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/datastore/CalendarDataStoreSQL.java" />
-        <option value="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/service/CalendarService.java" />
         <option value="$PROJECT_DIR$/service/src/applicationContext.xml" />
         <option value="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/Main.java" />
+        <option value="$PROJECT_DIR$/service/test/com/diosoft/calendar/objects/datastore/GsonSerializationTest.java" />
+        <option value="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/common/comparators/EventComparator.java" />
+        <option value="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/common/comparators/SortedEventByStartDate.java" />
+        <option value="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/Utils/Interval.java" />
+        <option value="$PROJECT_DIR$/service/test/com/diosoft/calendar/objects/service/CalendarServiceImpTest.java" />
+        <option value="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/service/CalendarServiceImp.java" />
+        <option value="$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/service/CalendarService.java" />
       </list>
     </option>
   </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
   </component>
+  <component name="MavenProjectNavigator">
+    <treeState />
+  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="54" />
+    <option name="x" value="1592" />
     <option name="y" value="-8" />
-    <option name="width" value="1554" />
-    <option name="height" value="912" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -168,7 +130,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -338,9 +299,58 @@
               <option name="myItemId" value="Calendar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="objects" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Calendar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="objects" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comparators" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Calendar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -368,6 +378,9 @@
     <property name="Downloaded.Files.Path" value="C:\Users\Denis\IdeaProjects\Calendar\service\lib" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="options.lastSelected" value="editor.preferences.appearance" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -383,69 +396,7 @@
       <recent name="com.diosoft.calendar.objects.service" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration default="false" name="CalendarServiceImpTest.testCheckPersonAvailable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.diosoft.calendar.objects.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="service" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.diosoft.calendar.objects.service" />
-      <option name="MAIN_CLASS_NAME" value="com.diosoft.calendar.objects.service.CalendarServiceImpTest" />
-      <option name="METHOD_NAME" value="testCheckPersonAvailable" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="CalendarServiceImpTest.testCheckPersonAvailable_true" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.diosoft.calendar.objects.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="service" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.diosoft.calendar.objects.service" />
-      <option name="MAIN_CLASS_NAME" value="com.diosoft.calendar.objects.service.CalendarServiceImpTest" />
-      <option name="METHOD_NAME" value="testCheckPersonAvailable_true" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.CalendarServiceImpTest">
     <configuration default="false" name="CalendarServiceImpTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -460,40 +411,6 @@
       <option name="MAIN_CLASS_NAME" value="com.diosoft.calendar.objects.service.CalendarServiceImpTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="CalendarServiceImpTest.testCheckPersonAvailable_false" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.diosoft.calendar.objects.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="service" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.diosoft.calendar.objects.service" />
-      <option name="MAIN_CLASS_NAME" value="com.diosoft.calendar.objects.service.CalendarServiceImpTest" />
-      <option name="METHOD_NAME" value="testCheckPersonAvailable_false" />
-      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -533,6 +450,91 @@
       <module name="service" />
       <envs />
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="GsonSerializationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.diosoft.calendar.objects.datastore.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="service" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.diosoft.calendar.objects.datastore" />
+      <option name="MAIN_CLASS_NAME" value="com.diosoft.calendar.objects.datastore.GsonSerializationTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="All in service" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="service" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="CalendarServiceImpTest.testSearchBestTimeForEvent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.diosoft.calendar.objects.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="service" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.diosoft.calendar.objects.service" />
+      <option name="MAIN_CLASS_NAME" value="com.diosoft.calendar.objects.service.CalendarServiceImpTest" />
+      <option name="METHOD_NAME" value="testSearchBestTimeForEvent" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -779,19 +781,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.CalendarServiceImpTest.testCheckPersonAvailable" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.CalendarServiceImpTest.testCheckPersonAvailable_true" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.CalendarServiceImpTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.CalendarServiceImpTest.testCheckPersonAvailable_false" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.CalendarServiceImpTest" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.GsonSerializationTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.All in service" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.CalendarServiceImpTest.testSearchBestTimeForEvent" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.CalendarServiceImpTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.CalendarServiceImpTest.testCheckPersonAvailable_false" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.CalendarServiceImpTest.testCheckPersonAvailable_true" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.CalendarServiceImpTest.testCheckPersonAvailable" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.CalendarServiceImpTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.CalendarServiceImpTest.testSearchBestTimeForEvent" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.All in service" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.GsonSerializationTest" />
+        <item index="4" class="java.lang.String" itemvalue="Application.Main" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -821,7 +823,11 @@
       <workItem from="1421488232506" duration="220000" />
       <workItem from="1421514766963" duration="672000" />
       <workItem from="1421573815938" duration="19674000" />
-      <workItem from="1421616512102" duration="317000" />
+      <workItem from="1421616512102" duration="955000" />
+      <workItem from="1421660616084" duration="641000" />
+      <workItem from="1421666595982" duration="198000" />
+      <workItem from="1421671262663" duration="21169000" />
+      <workItem from="1421694705341" duration="195000" />
     </task>
     <task id="LOCAL-00001" summary="add dir">
       <created>1421188815956</created>
@@ -883,11 +889,17 @@
       <option name="project" value="LOCAL" />
       <updated>1421591293077</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Добавил поддержку MySQL jdbc в Spring">
+      <created>1421616866711</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1421616866711</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48432000" />
+    <option name="totallyTimeSpent" value="71273000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -910,7 +922,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-8" width="1554" height="912" extended-state="0" />
+    <frame x="1592" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -922,20 +934,20 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32883817" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32820514" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299866" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32780612" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32683983" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32883817" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32738853" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32683983" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2356091" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18763326" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39937758" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5497835" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -968,91 +980,29 @@
     <MESSAGE value="Исправил метод add в CalendarService" />
     <MESSAGE value="Добавил allDay в Event" />
     <MESSAGE value="Проверка свободен ли пользователь в определенное время&#10;Добавил метод checkPersonAvailable в CalendarServiceImp" />
-    <option name="LAST_COMMIT_MESSAGE" value="Проверка свободен ли пользователь в определенное время&#10;Добавил метод checkPersonAvailable в CalendarServiceImp" />
+    <MESSAGE value="Добавил поддержку MySQL jdbc в Spring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил поддержку MySQL jdbc в Spring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="32" />
+      <option name="time" value="47" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="returnedValue" language="JAVA" custom="" />
+        <watch expression="expectedList" language="JAVA" custom="" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/service/CalendarServiceImp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="335" max-vertical-offset="1258">
-          <caret line="58" column="31" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/datastore/CalendarDataStoreImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="527" max-vertical-offset="935">
-          <caret line="61" column="23" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
-          <folding>
-            <element signature="method#publish#0;class#CalendarDataStoreImpl#0" expanded="false" />
-            <element signature="method#remove#0;class#CalendarDataStoreImpl#0" expanded="false" />
-            <element signature="method#getEvent#0;class#CalendarDataStoreImpl#0" expanded="false" />
-            <element signature="method#updateEvent#0;class#CalendarDataStoreImpl#0" expanded="false" />
-            <element signature="method#getEventsByInterval#0;class#CalendarDataStoreImpl#0" expanded="false" />
-            <element signature="method#getPersonsEvent#0;class#CalendarDataStoreImpl#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="629">
-          <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/datastore/CalendarDataStoreSQL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="43" max-vertical-offset="901">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#325#326#0" expanded="true" />
-            <element signature="e#369#370#0" expanded="true" />
-            <marker date="1421616626854" expanded="true" signature="425:445" placeholder="SELECT * FRO..users..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/datastore/CalendarDataStore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="391">
-          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/service/CalendarServiceImp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="62" max-vertical-offset="578">
-          <caret line="22" column="176" selection-start-line="22" selection-start-column="176" selection-end-line="22" selection-end-column="176" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/datastore/CalendarDataStoreImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="26" max-vertical-offset="782">
           <caret line="76" column="15" selection-start-line="76" selection-start-column="15" selection-end-line="76" selection-end-column="15" />
-          <folding>
-            <element signature="method#publish#0;class#CalendarDataStoreImpl#0" expanded="false" />
-            <element signature="method#remove#0;class#CalendarDataStoreImpl#0" expanded="false" />
-            <element signature="method#getEvent#0;class#CalendarDataStoreImpl#0" expanded="false" />
-            <element signature="method#updateEvent#0;class#CalendarDataStoreImpl#0" expanded="false" />
-            <element signature="method#getEventsByInterval#0;class#CalendarDataStoreImpl#0" expanded="false" />
-            <element signature="method#getPersonsEvent#0;class#CalendarDataStoreImpl#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1060,68 +1010,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2924">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#Event#0" expanded="false" />
-            <element signature="e#709#710#0" expanded="true" />
-            <element signature="e#743#744#0" expanded="true" />
-            <element signature="e#775#776#0" expanded="true" />
-            <element signature="e#803#804#0" expanded="true" />
-            <element signature="method#toString#0;class#Event#0" expanded="false" />
-            <element signature="method#hashCode#0;class#Event#0" expanded="false" />
-            <element signature="method#Event#0;class#Event#0" expanded="false" />
-            <element signature="method#title#0;class#Builder#0;class#Event#0" expanded="false" />
-            <element signature="method#description#0;class#Builder#0;class#Event#0" expanded="false" />
-            <element signature="method#email#0;class#Builder#0;class#Event#0" expanded="false" />
-            <element signature="method#id#0;class#Builder#0;class#Event#0" expanded="false" />
-            <element signature="method#attenders#0;class#Builder#0;class#Event#0" expanded="false" />
-            <element signature="method#allDay#0;class#Builder#0;class#Event#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/service/CalendarServiceImp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="62" max-vertical-offset="578">
-          <caret line="22" column="176" selection-start-line="22" selection-start-column="176" selection-end-line="22" selection-end-column="176" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/datastore/CalendarDataStoreImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="26" max-vertical-offset="782">
-          <caret line="76" column="15" selection-start-line="76" selection-start-column="15" selection-end-line="76" selection-end-column="15" />
-          <folding>
-            <element signature="method#publish#0;class#CalendarDataStoreImpl#0" expanded="false" />
-            <element signature="method#remove#0;class#CalendarDataStoreImpl#0" expanded="false" />
-            <element signature="method#getEvent#0;class#CalendarDataStoreImpl#0" expanded="false" />
-            <element signature="method#updateEvent#0;class#CalendarDataStoreImpl#0" expanded="false" />
-            <element signature="method#getEventsByInterval#0;class#CalendarDataStoreImpl#0" expanded="false" />
-            <element signature="method#getPersonsEvent#0;class#CalendarDataStoreImpl#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/common/Event.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2924">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#Event#0" expanded="false" />
-            <element signature="e#709#710#0" expanded="true" />
-            <element signature="e#743#744#0" expanded="true" />
-            <element signature="e#775#776#0" expanded="true" />
-            <element signature="e#803#804#0" expanded="true" />
-            <element signature="method#toString#0;class#Event#0" expanded="false" />
-            <element signature="method#hashCode#0;class#Event#0" expanded="false" />
-            <element signature="method#Event#0;class#Event#0" expanded="false" />
-            <element signature="method#title#0;class#Builder#0;class#Event#0" expanded="false" />
-            <element signature="method#description#0;class#Builder#0;class#Event#0" expanded="false" />
-            <element signature="method#email#0;class#Builder#0;class#Event#0" expanded="false" />
-            <element signature="method#id#0;class#Builder#0;class#Event#0" expanded="false" />
-            <element signature="method#attenders#0;class#Builder#0;class#Event#0" expanded="false" />
-            <element signature="method#allDay#0;class#Builder#0;class#Event#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1129,22 +1017,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2975">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#Event#0" expanded="false" />
-            <element signature="e#709#710#0" expanded="true" />
-            <element signature="e#743#744#0" expanded="true" />
-            <element signature="e#775#776#0" expanded="true" />
-            <element signature="e#803#804#0" expanded="true" />
-            <element signature="method#toString#0;class#Event#0" expanded="false" />
-            <element signature="method#hashCode#0;class#Event#0" expanded="false" />
-            <element signature="method#Event#0;class#Event#0" expanded="false" />
-            <element signature="method#title#0;class#Builder#0;class#Event#0" expanded="false" />
-            <element signature="method#description#0;class#Builder#0;class#Event#0" expanded="false" />
-            <element signature="method#email#0;class#Builder#0;class#Event#0" expanded="false" />
-            <element signature="method#id#0;class#Builder#0;class#Event#0" expanded="false" />
-            <element signature="method#attenders#0;class#Builder#0;class#Event#0" expanded="false" />
-            <element signature="method#allDay#0;class#Builder#0;class#Event#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1152,22 +1024,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2975">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#Event#0" expanded="false" />
-            <element signature="e#709#710#0" expanded="true" />
-            <element signature="e#743#744#0" expanded="true" />
-            <element signature="e#775#776#0" expanded="true" />
-            <element signature="e#803#804#0" expanded="true" />
-            <element signature="method#toString#0;class#Event#0" expanded="false" />
-            <element signature="method#hashCode#0;class#Event#0" expanded="false" />
-            <element signature="method#Event#0;class#Event#0" expanded="false" />
-            <element signature="method#title#0;class#Builder#0;class#Event#0" expanded="false" />
-            <element signature="method#description#0;class#Builder#0;class#Event#0" expanded="false" />
-            <element signature="method#email#0;class#Builder#0;class#Event#0" expanded="false" />
-            <element signature="method#id#0;class#Builder#0;class#Event#0" expanded="false" />
-            <element signature="method#attenders#0;class#Builder#0;class#Event#0" expanded="false" />
-            <element signature="method#allDay#0;class#Builder#0;class#Event#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1182,14 +1038,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="method#publish#0;class#CalendarDataStoreImpl#0" expanded="false" />
-            <element signature="method#remove#0;class#CalendarDataStoreImpl#0" expanded="false" />
-            <element signature="method#getEvent#0;class#CalendarDataStoreImpl#0" expanded="false" />
-            <element signature="method#updateEvent#0;class#CalendarDataStoreImpl#0" expanded="false" />
-            <element signature="method#getEventsByInterval#0;class#CalendarDataStoreImpl#0" expanded="false" />
-            <element signature="method#getPersonsEvent#0;class#CalendarDataStoreImpl#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1197,22 +1045,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="101" max-vertical-offset="2975">
           <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
-          <folding>
-            <element signature="docComment;class#Event#0" expanded="false" />
-            <element signature="e#709#710#0" expanded="true" />
-            <element signature="e#743#744#0" expanded="true" />
-            <element signature="e#775#776#0" expanded="true" />
-            <element signature="e#803#804#0" expanded="true" />
-            <element signature="method#toString#0;class#Event#0" expanded="false" />
-            <element signature="method#hashCode#0;class#Event#0" expanded="false" />
-            <element signature="method#Event#0;class#Event#0" expanded="false" />
-            <element signature="method#title#0;class#Builder#0;class#Event#0" expanded="false" />
-            <element signature="method#description#0;class#Builder#0;class#Event#0" expanded="false" />
-            <element signature="method#email#0;class#Builder#0;class#Event#0" expanded="false" />
-            <element signature="method#id#0;class#Builder#0;class#Event#0" expanded="false" />
-            <element signature="method#attenders#0;class#Builder#0;class#Event#0" expanded="false" />
-            <element signature="method#allDay#0;class#Builder#0;class#Event#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1227,7 +1059,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="130" max-vertical-offset="918">
           <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="125" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1278,7 +1109,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="799">
           <caret line="38" column="60" selection-start-line="38" selection-start-column="56" selection-end-line="38" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1286,14 +1116,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="117" max-vertical-offset="1139">
           <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
-          <folding>
-            <element signature="method#publish#0;class#CalendarDataStoreImpl#0" expanded="false" />
-            <element signature="method#remove#0;class#CalendarDataStoreImpl#0" expanded="false" />
-            <element signature="method#getEvent#0;class#CalendarDataStoreImpl#0" expanded="false" />
-            <element signature="method#updateEvent#0;class#CalendarDataStoreImpl#0" expanded="false" />
-            <element signature="method#getEventsByInterval#0;class#CalendarDataStoreImpl#0" expanded="false" />
-            <element signature="method#getPersonsEvent#0;class#CalendarDataStoreImpl#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1315,14 +1137,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="method#publish#0;class#CalendarDataStoreImpl#0" expanded="false" />
-            <element signature="method#remove#0;class#CalendarDataStoreImpl#0" expanded="false" />
-            <element signature="method#getEvent#0;class#CalendarDataStoreImpl#0" expanded="false" />
-            <element signature="method#updateEvent#0;class#CalendarDataStoreImpl#0" expanded="false" />
-            <element signature="method#getEventsByInterval#0;class#CalendarDataStoreImpl#0" expanded="false" />
-            <element signature="method#getPersonsEvent#0;class#CalendarDataStoreImpl#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1358,7 +1172,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.27884614" vertical-offset="2833" max-vertical-offset="19771">
           <caret line="208" column="31" selection-start-line="208" selection-start-column="31" selection-end-line="208" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1387,30 +1200,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
           <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/common/Event.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2532052" vertical-offset="0" max-vertical-offset="1734">
-          <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#Event#0" expanded="false" />
-            <element signature="e#709#710#0" expanded="true" />
-            <element signature="e#743#744#0" expanded="true" />
-            <element signature="e#775#776#0" expanded="true" />
-            <element signature="e#803#804#0" expanded="true" />
-            <element signature="method#toString#0;class#Event#0" expanded="false" />
-            <element signature="method#hashCode#0;class#Event#0" expanded="false" />
-            <element signature="method#Event#0;class#Event#0" expanded="false" />
-            <element signature="method#title#0;class#Builder#0;class#Event#0" expanded="false" />
-            <element signature="method#description#0;class#Builder#0;class#Event#0" expanded="false" />
-            <element signature="method#email#0;class#Builder#0;class#Event#0" expanded="false" />
-            <element signature="method#id#0;class#Builder#0;class#Event#0" expanded="false" />
-            <element signature="method#attenders#0;class#Builder#0;class#Event#0" expanded="false" />
-            <element signature="method#allDay#0;class#Builder#0;class#Event#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1418,46 +1207,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4722222" vertical-offset="0" max-vertical-offset="936">
           <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/test/com/diosoft/calendar/objects/datastore/CalendarDataStoreImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61752135" vertical-offset="0" max-vertical-offset="936">
-          <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/test/com/diosoft/calendar/objects/service/CalendarServiceImpTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43696582" vertical-offset="186" max-vertical-offset="1173">
-          <caret line="35" column="79" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="79" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#901#908#0" expanded="true" />
-            <element signature="e#1854#1861#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/Utils/JsonHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24468085" vertical-offset="3" max-vertical-offset="1496">
-          <caret line="21" column="82" selection-start-line="21" selection-start-column="82" selection-end-line="21" selection-end-column="82" />
-          <folding>
-            <element signature="method#writeJson#0;class#JsonHelper#0" expanded="false" />
-            <element signature="method#readFromJson#0;class#JsonHelper#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/service/CalendarServiceImp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6278755" vertical-offset="335" max-vertical-offset="1258">
-          <caret line="58" column="31" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1465,27 +1214,114 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.06781915" vertical-offset="0" max-vertical-offset="752">
           <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/datastore/CalendarDataStoreSQL.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="43" max-vertical-offset="901">
+        <state vertical-scroll-proportion="0.46169356" vertical-offset="43" max-vertical-offset="901">
           <caret line="16" column="25" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45859873" vertical-offset="124" max-vertical-offset="629">
+          <caret line="20" column="37" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5483871" vertical-offset="0" max-vertical-offset="496">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/Utils/JsonHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42952126" vertical-offset="0" max-vertical-offset="901">
+          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/test/com/diosoft/calendar/objects/datastore/GsonSerializationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6177249" vertical-offset="77" max-vertical-offset="1224">
+          <caret line="97" column="25" selection-start-line="97" selection-start-column="25" selection-end-line="97" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_20/src.zip!/java/time/temporal/Temporal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="904" max-vertical-offset="6596">
+          <caret line="128" column="17" selection-start-line="128" selection-start-column="17" selection-end-line="128" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_20/src.zip!/java/time/Period.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22089948" vertical-offset="4712" max-vertical-offset="16456">
+          <caret line="384" column="75" selection-start-line="384" selection-start-column="75" selection-end-line="384" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_20/src.zip!/java/time/Duration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33243608" vertical-offset="6077" max-vertical-offset="20655">
+          <caret line="470" column="18" selection-start-line="470" selection-start-column="18" selection-end-line="470" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_20/javafx-src.zip!/javafx/collections/transformation/SortedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7380952" vertical-offset="360" max-vertical-offset="6035">
+          <caret line="90" column="56" selection-start-line="90" selection-start-column="42" selection-end-line="90" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_20/src.zip!/java/util/Date.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="14079" max-vertical-offset="22168">
+          <caret line="915" column="34" selection-start-line="915" selection-start-column="34" selection-end-line="915" selection-end-column="34" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#325#326#0" expanded="true" />
-            <element signature="e#369#370#0" expanded="true" />
-            <marker date="1421616626854" expanded="true" signature="425:445" placeholder="SELECT * FRO..users..." />
+            <element signature="e#38710#38711#0" expanded="true" />
+            <element signature="e#38770#38771#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/common/Event.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2635">
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/common/comparators/SortedEventByStartDate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="method#compare#0;class#SortedEventByStartDate#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/datastore/CalendarDataStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/datastore/CalendarDataStoreImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="98" max-vertical-offset="646">
-          <caret line="61" column="23" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
+          <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
           <folding>
             <element signature="method#publish#0;class#CalendarDataStoreImpl#0" expanded="false" />
             <element signature="method#remove#0;class#CalendarDataStoreImpl#0" expanded="false" />
@@ -1497,37 +1333,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/applicationContext.xml">
+    <entry file="file://$PROJECT_DIR$/service/test/com/diosoft/calendar/objects/datastore/CalendarDataStoreImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.64" vertical-offset="124" max-vertical-offset="629">
-          <caret line="20" column="37" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="37" />
+        <state vertical-scroll-proportion="1.0" vertical-offset="0" max-vertical-offset="697">
+          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="50" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/test/com/diosoft/calendar/objects/datastore/GsonDeserializationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3548387" vertical-offset="0" max-vertical-offset="527">
+          <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/test/com/diosoft/calendar/objects/service/CalendarServiceImpTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3794643" vertical-offset="0" max-vertical-offset="896">
+          <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+          <folding>
+            <element signature="method#testCheckPersonAvailable_false#0;class#CalendarServiceImpTest#0" expanded="false" />
+            <element signature="method#testCheckPersonAvailable_true#0;class#CalendarServiceImpTest#0" expanded="false" />
+            <element signature="method#testSearchBestTimeForEvent#0;class#CalendarServiceImpTest#0" expanded="false" />
+            <element signature="method#checkPersonAvailableForEvent_true#0;class#CalendarServiceImpTest#0" expanded="false" />
+            <element signature="method#checkPersonAvailableForEvent_false#0;class#CalendarServiceImpTest#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/Utils/Interval.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47433037" vertical-offset="0" max-vertical-offset="896">
+          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding>
+            <element signature="method#Interval#0;class#Interval#0" expanded="false" />
+            <element signature="method#Interval#1;class#Interval#0" expanded="false" />
+            <element signature="method#toString#0;class#Interval#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/service/CalendarService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="27" max-vertical-offset="510">
-          <caret line="21" column="116" selection-start-line="21" selection-start-column="116" selection-end-line="21" selection-end-column="116" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+          <caret line="10" column="3" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/service/CalendarServiceImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7020089" vertical-offset="0" max-vertical-offset="896">
+          <caret line="147" column="47" selection-start-line="147" selection-start-column="19" selection-end-line="147" selection-end-column="47" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#addEvent#0;class#CalendarServiceImp#0" expanded="false" />
+            <element signature="method#removeEvent#0;class#CalendarServiceImp#0" expanded="false" />
+            <element signature="method#getEvent#0;class#CalendarServiceImp#0" expanded="false" />
+            <element signature="method#checkPersonAvailable#0;class#CalendarServiceImp#0" expanded="false" />
+            <element signature="method#searchBestTimeForEvent#0;class#CalendarServiceImp#0" expanded="false" />
+            <element signature="method#checkPersonAvailableForEvent#0;class#CalendarServiceImp#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/datastore/CalendarDataStore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
-          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/com/diosoft/calendar/objects/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4455645" vertical-offset="0" max-vertical-offset="496">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>

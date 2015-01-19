@@ -1,5 +1,6 @@
 package com.diosoft.calendar.objects.service;
 
+import com.diosoft.calendar.objects.Utils.Interval;
 import com.diosoft.calendar.objects.common.Event;
 import com.diosoft.calendar.objects.common.Person;
 import java.rmi.Remote;
@@ -20,5 +21,9 @@ public interface CalendarService extends Remote {
     public List<Event> searchByInterval(GregorianCalendar searchDateFrom, GregorianCalendar searchDateTo) throws RemoteException;
 
     boolean checkPersonAvailable(Person person, GregorianCalendar from, GregorianCalendar to) throws RemoteException;
+
+    List<Interval> searchBestTimeForEvent(Person person, Event event, GregorianCalendar startDate, GregorianCalendar endDate) throws RemoteException;
+
+    boolean checkPersonAvailableForEvent(Person person, Event checkedEvent)  throws RemoteException;
 
 }
