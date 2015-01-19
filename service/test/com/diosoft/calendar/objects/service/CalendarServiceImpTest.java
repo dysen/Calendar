@@ -61,4 +61,45 @@ public class CalendarServiceImpTest {
 
     }
 
+    @Test
+    public void checkPersonAvailableForEvent_true() throws Exception {
+
+        // initialize variable inputs
+        Event inputEvent = new Event.Builder().startDate(new GregorianCalendar(2015, 1, 1, 11, 0))
+                .endDate(new GregorianCalendar(2015, 1, 1, 12, 0)).build();
+        Event personEvent = new Event.Builder().startDate(new GregorianCalendar(2015, 1, 1, 9, 0))
+                .endDate(new GregorianCalendar(2015, 1, 1, 10, 0)).build();
+
+        Person person = new Person.Builder().firstName("Vlad").build();
+
+        List<Event> eventsList = new ArrayList<Event>();
+        eventsList.add(personEvent);
+
+        CalendarDataStore dataStore = mock(CalendarDataStore.class);
+        when(dataStore.getPersonsEvent(person)).thenReturn(eventsList);
+
+        boolean result = new CalendarServiceImp(dataStore).checkPersonAvailableForEvent(person, inputEvent);
+        assertTrue(result);
+    }
+
+    @Test
+    public void checkPersonAvailableForEvent_false() throws Exception {
+
+        // initialize variable inputs
+        Event inputEvent = new Event.Builder().startDate(new GregorianCalendar(2015, 1, 1, 9, 0))
+                .endDate(new GregorianCalendar(2015, 1, 1, 13, 0)).build();
+        Event personEvent = new Event.Builder().startDate(new GregorianCalendar(2015, 1, 1, 10, 0))
+                .endDate(new GregorianCalendar(2015, 1, 1, 12, 0)).build();
+
+        Person person = new Person.Builder().firstName("Vlad").build();
+
+        List<Event> eventsList = new ArrayList<Event>();
+        eventsList.add(personEvent);
+
+        CalendarDataStore dataStore = mock(CalendarDataStore.class);
+        when(dataStore.getPersonsEvent(person)).thenReturn(eventsList);
+
+        boolean result = new CalendarServiceImp(dataStore).checkPersonAvailableForEvent(person, inputEvent);
+        assertFalse(result);
+    }
 }

@@ -76,4 +76,25 @@ public class CalendarServiceImp implements CalendarService {
         return true;
     }
 
+    public boolean checkPersonAvailableForEvent(Person person, Event checkedEvent) {
+        List<Event> personEvents = storage.getPersonsEvent(person);
+
+        for (Event event : personEvents) {
+            if (event == null) return true;
+            if (checkedEvent.getStartDate().getTime().before(event.getStartDate().getTime()) &&
+                    checkedEvent.getEndDate().getTime().after(event.getEndDate().getTime())) {
+                return false;
+            } else if (checkedEvent.getStartDate().getTime().before(event.getStartDate().getTime()) &&
+                    checkedEvent.getEndDate().getTime().before(event.getEndDate().getTime())) {
+                return false;
+            } else if (checkedEvent.getStartDate().getTime().after(event.getStartDate().getTime()) &&
+                    checkedEvent.getEndDate().getTime().before(event.getEndDate().getTime())) {
+                return false;
+            } else if (checkedEvent.getStartDate().getTime().before(event.getStartDate().getTime()) &&
+                    checkedEvent.getEndDate().getTime().after(event.getEndDate().getTime())) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
