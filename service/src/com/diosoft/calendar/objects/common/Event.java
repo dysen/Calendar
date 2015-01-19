@@ -1,6 +1,9 @@
 package com.diosoft.calendar.objects.common;
 
+import com.google.gson.*;
+
 import java.io.Serializable;
+import java.lang.reflect.Type;
 import java.util.*;
 
 /**
