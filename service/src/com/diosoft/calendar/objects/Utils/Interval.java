@@ -1,9 +1,11 @@
 package com.diosoft.calendar.objects.Utils;
 
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class Interval {
     private Date starDate;
+    private Date endDate;
 
     @Override
     public boolean equals(Object o) {
@@ -24,8 +26,6 @@ public class Interval {
         result = 31 * result + (endDate != null ? endDate.hashCode() : 0);
         return result;
     }
-
-    private Date endDate;
 
     public Interval() {
 

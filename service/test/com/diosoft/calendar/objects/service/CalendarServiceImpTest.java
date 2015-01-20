@@ -75,32 +75,32 @@ public class CalendarServiceImpTest {
         List<Event> eventsList = new ArrayList<Event>();
         //список событий пользователя
         eventsList.add(new Event.Builder()
-                .startDate(new GregorianCalendar(2015, 1, 1, 12, 00))
-                .endDate(new GregorianCalendar(2015, 1, 1, 13, 01))
+                .startDate(new GregorianCalendar(2015, 1, 1, 12, 0))
+                .endDate(new GregorianCalendar(2015, 1, 1, 13, 1))
                 .build());
 
         eventsList.add(new Event.Builder()
-                .startDate(new GregorianCalendar(2015, 1, 1, 15, 00))
-                .endDate(new GregorianCalendar(2015, 1, 1, 17, 00))
+                .startDate(new GregorianCalendar(2015, 1, 1, 15, 0))
+                .endDate(new GregorianCalendar(2015, 1, 1, 17, 0))
                 .build());
 
         eventsList.add(new Event.Builder()
-                .startDate(new GregorianCalendar(2015, 1, 1, 17, 00))
-                .endDate(new GregorianCalendar(2015, 1, 1, 18, 00))
+                .startDate(new GregorianCalendar(2015, 1, 1, 17, 0))
+                .endDate(new GregorianCalendar(2015, 1, 1, 18, 0))
                 .build());
 
         //событие которое мы будет пытаться впихнуть в наш интервал
         Event event = new Event.Builder()
-                .startDate(new GregorianCalendar(2015, 1, 1, 16, 00))
-                .endDate(new GregorianCalendar(2015, 1, 1, 18, 00))
+                .startDate(new GregorianCalendar(2015, 1, 1, 16,0 ))
+                .endDate(new GregorianCalendar(2015, 1, 1, 18, 0))
                 .build();
 
         CalendarDataStore dataStore = mock(CalendarDataStore.class);
         when(dataStore.getPersonsEvent(person)).thenReturn(eventsList);
 
         List<Interval> expectedList = new ArrayList<Interval>();
-        expectedList.add(new Interval(new GregorianCalendar(2015, 1, 1, 9, 00).getTime(), new GregorianCalendar(2015, 1, 1, 12, 00).getTime()));
-        expectedList.add(new Interval(new GregorianCalendar(2015, 1, 1, 18, 00).getTime(), new GregorianCalendar(2015, 1, 1, 23, 00).getTime()));
+        expectedList.add(new Interval(new GregorianCalendar(2015, 1, 1, 9, 0).getTime(), new GregorianCalendar(2015, 1, 1, 12, 00).getTime()));
+        expectedList.add(new Interval(new GregorianCalendar(2015, 1, 1, 18, 0).getTime(), new GregorianCalendar(2015, 1, 1, 23, 00).getTime()));
 
         List<Interval> returnedValue = new CalendarServiceImp(dataStore).searchBestTimeForEvent(person, event, inputSearchDateFrom, inputSearchDateTo);
         assertEquals(expectedList, returnedValue);
