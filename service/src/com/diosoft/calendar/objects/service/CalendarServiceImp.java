@@ -146,9 +146,18 @@ public class CalendarServiceImp implements CalendarService {
 
     @Override
     public boolean checkPersonAvailableForEvent(Person person, Event checkedEvent) throws RemoteException{
-        List<Event> personEvents = storage.getPersonsEvent(person);
+        List<Event> allPersonEvents = storage.getPersonsEvent(person);
+        List<Event> exactPersonEvents = storage.getPersonsEvent(person);
 
-        for (Event event : personEvents) {
+        for (Event event : allPersonEvents) {
+            if (event.getStartDate().get(1) == checkedEvent.getStartDate().get(1) &&
+                    event.getStartDate().get(2) == checkedEvent.getStartDate().get(2) &&
+                    event.getStartDate().get(3) == checkedEvent.getStartDate().get(3)) {
+                exactPersonEvents.add(event);
+            }
+        }
+
+        for (Event event : exactPersonEvents) {
             if (event == null) return true;
             if (checkedEvent.getStartDate().getTime().before(event.getStartDate().getTime()) &&
                     checkedEvent.getEndDate().getTime().after(event.getEndDate().getTime())) {
