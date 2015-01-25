@@ -7,11 +7,12 @@ import com.diosoft.calendar.objects.datastore.CalendarDataStore;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -34,7 +35,7 @@ public class CalendarServiceImpTest {
 
         CalendarDataStore dataStore = mock(CalendarDataStore.class);
         when(dataStore.getPersonsEvent(person)).thenReturn(eventsList);
-
+        //local code review (vtegza): extract variable @ 1/25/2015
         boolean result = new CalendarServiceImp(dataStore).checkPersonAvailable(person, inputSearchDateFrom, inputSearchDateTo);
         assertFalse(result);
 
@@ -123,7 +124,7 @@ public class CalendarServiceImpTest {
 
         CalendarDataStore dataStore = mock(CalendarDataStore.class);
         when(dataStore.getPersonsEvent(person)).thenReturn(eventsList);
-
+        //local code review (vtegza): extract variable @ 1/25/2015
         boolean result = new CalendarServiceImp(dataStore).checkPersonAvailableForEvent(person, inputEvent);
         assertTrue(result);
     }

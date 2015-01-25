@@ -34,6 +34,7 @@ public class CalendarDataStoreImpl implements CalendarDataStore {
         Event event = mainDataStore.get(id);
         List<Person> attenders = event.getAttenders();
 
+        //local code review (vtegza): extract to different method @ 1/25/2015
         for (Person person: attenders) {
             HashSet<UUID> uuidsPerson =  attenderStore.get(person);
             //Проверка на null uuidsPerson?
@@ -55,7 +56,7 @@ public class CalendarDataStoreImpl implements CalendarDataStore {
 
     @Override
     public void updateEvent(Event event) {
-
+        //local code review (vtegza): do not forget to implement this method @ 1/25/2015
     }
 
     @Override

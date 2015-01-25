@@ -18,6 +18,7 @@ public interface CalendarService extends Remote {
 
     Event getEvent(String name) throws RemoteException;
 
+    //local code review (vtegza): no need in public here @ 1/25/2015
     public List<Event> searchByInterval(GregorianCalendar searchDateFrom, GregorianCalendar searchDateTo) throws RemoteException;
 
     boolean checkPersonAvailable(Person person, GregorianCalendar from, GregorianCalendar to) throws RemoteException;

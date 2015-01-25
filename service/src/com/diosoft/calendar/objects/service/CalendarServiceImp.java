@@ -6,9 +6,13 @@ import com.diosoft.calendar.objects.common.Person;
 import com.diosoft.calendar.objects.common.comparators.SortedEventByStartDate;
 import com.diosoft.calendar.objects.datastore.CalendarDataStore;
 
-import javax.xml.crypto.Data;
 import java.rmi.RemoteException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.List;
+import java.util.TreeSet;
+import java.util.UUID;
 import java.util.logging.Logger;
 
 public class CalendarServiceImp implements CalendarService {
@@ -42,16 +46,20 @@ public class CalendarServiceImp implements CalendarService {
 
     @Override
     public Event removeEvent(String name) throws RemoteException {
+        //local code review (vtegza): move logic here - first find event, then remove it by providing UUID or all event @ 1/25/2015
         storage.remove(name);
+        //local code review (vtegza): should return event that would be removed or make it void @ 1/25/2015
         return null;
     }
 
     @Override
     public Event addAttender(String name, Person... newPersons) throws RemoteException {
+        //local code review (vtegza): should be implemented @ 1/25/2015
         return null;
     }
 
     @Override
+    //local code review (vtegza): rename without under score @ 1/25/2015
     public Event getEvent(String _eventTitle) throws RemoteException {
         return storage.getEvent(_eventTitle);
     }
@@ -83,7 +91,7 @@ public class CalendarServiceImp implements CalendarService {
     public List<Interval> searchBestTimeForEvent(Person person, Event event, GregorianCalendar startDate, GregorianCalendar endDate) throws RemoteException {
 
         List<Interval> bestTimeIntervals = new ArrayList<Interval>();
-
+        //local code review (vtegza): try not to use cyrillic in comments@ 1/25/2015
         //Начало и конец нашего ивента который мы хотим впихнуьт
         Date eventStart = event.getStartDate().getTime();
         Date eventEnd = event.getEndDate().getTime();
@@ -131,6 +139,7 @@ public class CalendarServiceImp implements CalendarService {
                 }
 
             } else {
+                //local code review (vtegza): no need in continue @ 1/25/2015
                 continue;
             }
 

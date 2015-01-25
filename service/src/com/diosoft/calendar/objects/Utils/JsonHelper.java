@@ -4,11 +4,15 @@ import com.diosoft.calendar.objects.common.Event;
 import com.diosoft.calendar.objects.common.Person;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
 import java.util.HashSet;
 import java.util.Map;
@@ -25,7 +29,7 @@ public class JsonHelper {
     }.getType();
     public static final Type ATTENDER_STORE_TYPE = new TypeToken<Map<Person, HashSet<UUID>>>() {
     }.getType();
-
+    //local code review (vtegza): consider changing static methods to instance methods @ 1/25/2015
 
     public static void writeJson(String json, String fileName) throws IOException {
         FileOutputStream fOut = new FileOutputStream(new File(fileName));

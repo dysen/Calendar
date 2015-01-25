@@ -5,17 +5,21 @@ import com.diosoft.calendar.objects.common.Event;
 import com.diosoft.calendar.objects.common.Person;
 import junit.framework.TestCase;
 import org.junit.BeforeClass;
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
-import org.junit.runners.Suite.SuiteClasses;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.UUID;
 
 /**
  * Created by dysen on 1/18/15.
  */
 
-
+//local code review (vtegza): no need to extends form TestCase @ 1/25/2015
+//local code review (vtegza): there is no actual test @ 1/25/2015
 public class BaseSerializationTest extends TestCase {
     protected Map<UUID, Event> mainDataStore;
     protected Map<Person, HashSet<UUID>> attenderStore;
@@ -31,6 +35,7 @@ public class BaseSerializationTest extends TestCase {
     protected String attenderStoreToJson;
     protected String mainDataStoreToJson;
 
+    //local code review (vtegza): create TestHelper and call method instead of extending from it and relaying on @Before @ 1/25/2015
     @BeforeClass
     public void setUp() {
 

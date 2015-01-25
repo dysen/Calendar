@@ -1,18 +1,10 @@
 package com.diosoft.calendar.objects.datastore;
 
 import com.diosoft.calendar.objects.Utils.JsonHelper;
-import com.diosoft.calendar.objects.common.Event;
-import com.diosoft.calendar.objects.common.Person;
-import junit.framework.TestCase;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
-import java.util.*;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 
 public class GsonSerializationTest extends BaseSerializationTest{
@@ -80,6 +72,7 @@ public class GsonSerializationTest extends BaseSerializationTest{
     public void testMainStoreToJsonConverter() throws IOException {
 
         String mainDataStoreMapJsonActual;
+        //local code review (vtegza): you could have predefined files in youre test package in order to test @ 1/25/2015
         String mainDataStoreMapJsonExpected = "{\n" +
                 "  \"" + id + "\": {\n" +
                 "    \"title\": \"Event Title\",\n" +

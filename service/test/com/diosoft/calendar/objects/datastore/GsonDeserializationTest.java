@@ -3,19 +3,25 @@ package com.diosoft.calendar.objects.datastore;
 import com.diosoft.calendar.objects.Utils.JsonHelper;
 import com.diosoft.calendar.objects.common.Event;
 import com.diosoft.calendar.objects.common.Person;
-import com.google.gson.Gson;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 /**
  * Created by dysen on 1/18/15.
  */
 public class GsonDeserializationTest extends BaseSerializationTest {
 
+    //local code review (vtegza): follow structure @ 1/25/2015
+    // initialize variable inputs
+
+    // initialize mocks
+
+    // initialize class to test
+
+    // invoke method on class to test
+
+    // assert return value
+
+    // verify mock expectations
     @Test
     public void testPersonDeserialization() {
 

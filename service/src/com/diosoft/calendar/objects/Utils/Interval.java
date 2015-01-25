@@ -1,9 +1,11 @@
+//local code review (vtegza): do not use upper case letters for package names @ 1/25/2015
 package com.diosoft.calendar.objects.Utils;
 
 import java.util.Date;
-import java.util.GregorianCalendar;
 
 public class Interval {
+
+    //local code review (vtegza): could be final @ 1/25/2015
     private Date starDate;
     private Date endDate;
 

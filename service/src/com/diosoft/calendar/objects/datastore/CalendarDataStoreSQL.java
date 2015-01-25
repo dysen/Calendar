@@ -19,7 +19,7 @@ public class CalendarDataStoreSQL {
         String sql = "SELECT * FROM  users";
         Connection conn = null;
         ResultSet resultSet;
-
+        //local code review (vtegza): look into spring jdbcTemplate @ 1/25/2015
         try {
             conn = dataSource.getConnection();
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -38,6 +38,7 @@ public class CalendarDataStoreSQL {
                 try {
                     conn.close();
                 } catch (SQLException e) {
+                    //local code review (vtegza): do not live empty catch block @ 1/25/2015
                 }
             }
         }
