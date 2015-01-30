@@ -32,5 +32,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="com.mysql.jdbc:com.springsource.com.mysql.jdbc:5.1.6" level="project" />
+    <orderEntry type="library" name="org.xerial:sqlite-jdbc" level="project" />
   </component>
 </module>

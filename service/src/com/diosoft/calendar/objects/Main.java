@@ -1,9 +1,6 @@
 package com.diosoft.calendar.objects;
 
-import com.diosoft.calendar.objects.datastore.CalendarDataStoreImpl;
 import com.diosoft.calendar.objects.datastore.CalendarDataStoreSQL;
-import com.diosoft.calendar.objects.service.CalendarService;
-import com.diosoft.calendar.objects.service.CalendarServiceImp;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -20,7 +17,7 @@ public class Main {
         logger.info("Service started");
 
         CalendarDataStoreSQL customerDAO = (CalendarDataStoreSQL) context.getBean("calendarDataStoreSQL");
-        customerDAO.selectAll();
+        customerDAO.Conn();
 
     }
 
